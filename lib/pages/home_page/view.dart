@@ -11,9 +11,9 @@ Widget buildView(HomeState state, Dispatch dispatch, ViewService viewService) {
   // print('主题颜色:${state.themeColor == Colors.green ? "绿色" : '蓝色'}');
   return new Scaffold(
     appBar: null,
-    body: SafeArea(
-      child: Container(
-        color: state.themeColor,
+    body: Container(
+      color: state.themeColor,
+      child: SafeArea(
         child: Column(
           children: [
             viewService.buildComponent('nav_header'),

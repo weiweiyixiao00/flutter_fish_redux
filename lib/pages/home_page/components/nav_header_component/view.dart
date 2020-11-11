@@ -8,8 +8,8 @@ import 'state.dart';
 Widget buildView(NavHeaderState state, Dispatch dispatch, ViewService viewService) {
   String searchWord = state.searchWords.length > 0 ? state.searchWords[0] : '在千万商品中搜索';
   return Container(
-      color: Colors.white,
-      padding: EdgeInsets.only(left: 12.0,right: 12.0,bottom: 8.0),
+      color: state.themeColor,
+      padding: EdgeInsets.only(left: 12.0,right: 12.0,bottom: 8.0, top: 8.0),
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
