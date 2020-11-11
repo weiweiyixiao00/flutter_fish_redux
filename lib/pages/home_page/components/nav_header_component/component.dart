@@ -31,7 +31,8 @@ class NavHeaderConnector extends ConnOp<HomeState, NavHeaderState>
   @override
   NavHeaderState computed(HomeState state) {
     return NavHeaderState()
-      ..searchWords = state.searchKey;
+      ..searchWords = state.searchKey
+      ..themeColor = state.themeColor;
   }
 
   

@@ -19,15 +19,5 @@ void _onInit(Action action, Context<NavHeaderState> ctx){
       ctx.dispatch(NavHeaderActionCreator.onSaveSearchKey(keyList));
     }
   });
-  // const params = {
-  //   "itemsId": 100,
-  //   "provinceId": 16,
-  //   "cityId": 173,
-  //   "regionId": 2450,
-  //   "street": 12036596,
-  // };
-  // HomeService.getBanner(params).then((data){
-
-  // });
 }
 

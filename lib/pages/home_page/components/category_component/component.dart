@@ -23,7 +23,8 @@ class CategoryConnector extends ConnOp<HomeState, CategoryState> {
   @override
   CategoryState get(HomeState state) {
     return CategoryState().clone()
-      ..categoryList = state.categoryList;
+      ..categoryList = state.categoryList
+      ..themeColor = state.themeColor;
   }
 
   @override

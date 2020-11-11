@@ -2,7 +2,6 @@ import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'action.dart';
 import 'state.dart';
 
 Widget buildItem(CategoryState state, ViewService viewService) {
@@ -27,7 +26,7 @@ Widget buildItem(CategoryState state, ViewService viewService) {
               child: Text(item.name,
                 style: TextStyle(
                   fontSize: 12,
-                  color: Colors.black,
+                  color: Colors.black
                 )
               ),
             )
@@ -48,12 +47,13 @@ Widget buildItem(CategoryState state, ViewService viewService) {
 }
 
 Widget buildView(CategoryState state, Dispatch dispatch, ViewService viewService) {
+  print('buildView字体颜色:${state.themeColor == Colors.blue}');
   return Container(
     height: 200,
     width: 361,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(10),
-      color: Colors.white,
+      color: state.themeColor,
     ),
     margin: EdgeInsets.symmetric(vertical: 0, horizontal: 12),
     child: buildItem(state, viewService),
