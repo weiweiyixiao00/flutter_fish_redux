@@ -4,8 +4,6 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'action.dart';
 import 'state.dart';
-RefreshController refreshController =
-      RefreshController(initialRefresh: false);
 
 Widget buildView(HomeState state, Dispatch dispatch, ViewService viewService) {
   return new Scaffold(
@@ -21,10 +19,10 @@ Widget buildView(HomeState state, Dispatch dispatch, ViewService viewService) {
               child: SmartRefresher(
                 onRefresh: () async{ 
                   dispatch(HomeActionCreator.onChangeTheme());
-                  refreshController.refreshCompleted();
+                  dispatch(HomeActionCreator.onRefresh());
                 },
                 header: BezierCircleHeader(),
-                controller: refreshController,
+                controller: state.refreshController,
                 enablePullUp: false,
                 enablePullDown: true,
                 child: SingleChildScrollView(

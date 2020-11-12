@@ -47,7 +47,6 @@ Widget buildItem(CategoryState state, ViewService viewService) {
 }
 
 Widget buildView(CategoryState state, Dispatch dispatch, ViewService viewService) {
-  print('buildView字体颜色:${state.themeColor == Colors.blue}');
   return Container(
     height: 200,
     width: 361,

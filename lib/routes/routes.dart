@@ -5,7 +5,6 @@ import 'package:shopFish/store/state.dart';
 import 'package:shopFish/store/store.dart';
 
 class Routes {
-
   static final AbstractRoutes routes = PageRoutes(
     pages: <String, Page<Object, dynamic>>{
       'splash_page': SplashPage(),
