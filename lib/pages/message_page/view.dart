@@ -6,6 +6,7 @@ import 'action.dart';
 import 'state.dart';
 
 Widget buildView(MessageState state, Dispatch dispatch, ViewService viewService) {
+  print('构建列表:buildView-11111');
   return Scaffold(
     appBar: AppBar(
       backgroundColor: Colors.white,
@@ -23,23 +24,26 @@ Widget buildView(MessageState state, Dispatch dispatch, ViewService viewService)
         ),
       ),
     ),
-    body:SafeArea(
-      child: SmartRefresher(
-        onRefresh: () async {
-          dispatch(MessageActionCreator.onGetMessages());
-        },
-        header: BezierCircleHeader(),
-        controller: state.refreshController,
-        enablePullUp: false,
-        enablePullDown: true,
-        child: _itemWidget(state, viewService),
+    body: Container(
+      color: Color(0xfff5f5f5),
+      child: SafeArea(
+        child: SmartRefresher(
+          onRefresh: () async {
+            dispatch(MessageActionCreator.onGetMessages());
+          },
+          header: BezierCircleHeader(),
+          controller: state.refreshController,
+          enablePullUp: false,
+          enablePullDown: true,
+          child: _itemWidget(state, viewService),
+        ),
       ),
     ),
   );
 }
 
 Widget _itemWidget(MessageState state, ViewService viewService) {
-  if (state.items != null) {
+  if (state.items != null && state.items.length > 0) {
     ///使用列表
     return ListView.builder(
       itemBuilder: viewService.buildAdapter().itemBuilder,

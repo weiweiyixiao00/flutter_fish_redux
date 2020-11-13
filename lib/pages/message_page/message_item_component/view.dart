@@ -6,20 +6,37 @@ import 'state.dart';
 
 Widget buildView(MessageItemState state, Dispatch dispatch, ViewService viewService) {
   return Container(
-    height: 100,
-    color: Colors.green,
+    margin: EdgeInsets.only(top: 10, right: 10, left: 10),
+    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(5),
+      color: Colors.white,
+    ),
     child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Text(state.message.title,
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
+        Row(
+          children: [
+            Expanded(
+              flex: 1,
+              child: Text(state.message.title,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Text(state.message.date,
+              style: TextStyle(
+                color: Color(0xff999999),
+                fontSize: 14,
+              ),
+            ),
+          ],
         ),
         Container(
-          margin: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+          margin: EdgeInsets.symmetric(vertical: 8,),
           child: Text(state.message.content,
             style: TextStyle(
               color: Color(0xff666666),
@@ -27,12 +44,7 @@ Widget buildView(MessageItemState state, Dispatch dispatch, ViewService viewServ
             ),
           ),
         ),
-        Text(state.message.date,
-          style: TextStyle(
-            color: Color(0xff999999),
-            fontSize: 14,
-          ),
-        ),
+        
       ],
     ),
   );

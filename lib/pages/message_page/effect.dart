@@ -24,9 +24,10 @@ void _onGetMessage(Action action, Context<MessageState> ctx) {
     ctx.state.refreshController.refreshCompleted();
     if (res.data['success']) {
       List<MessageItemState> messages = [];
-      res.data['data'].map((item) {
+      print(res.data['data']);
+      for (var item in res.data['data']) {
         messages.add(MessageItemState(message: MessageModel.fromJson(item)));
-      });
+      }
       ctx.dispatch(MessageActionCreator.onSaveMessage(messages));
     }
   });

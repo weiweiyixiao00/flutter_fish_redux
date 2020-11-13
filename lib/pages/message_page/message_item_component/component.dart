@@ -8,8 +8,8 @@ import 'view.dart';
 class MessageItemComponent extends Component<MessageItemState> {
   MessageItemComponent()
       : super(
-            // effect: buildEffect(),
-            // reducer: buildReducer(),
+            effect: buildEffect(),
+            reducer: buildReducer(),
             view: buildView,
             dependencies: Dependencies<MessageItemState>(
                 adapter: null,

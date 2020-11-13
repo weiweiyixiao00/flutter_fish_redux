@@ -43,6 +43,6 @@ class MessageState extends MutableSource implements Cloneable<MessageState> {
 MessageState initState(Map<String, dynamic> args) {
   return MessageState()
     // ..messageList = []
-    ..refreshController = RefreshController(initialRefresh: true);
-    // ..items = [];
+    ..refreshController = RefreshController(initialRefresh: true)
+    ..items = [];
 }
