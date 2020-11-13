@@ -18,7 +18,6 @@ Widget buildView(HomeState state, Dispatch dispatch, ViewService viewService) {
               flex: 1,
               child: SmartRefresher(
                 onRefresh: () async{ 
-                  dispatch(HomeActionCreator.onChangeTheme());
                   dispatch(HomeActionCreator.onRefresh());
                 },
                 header: BezierCircleHeader(),

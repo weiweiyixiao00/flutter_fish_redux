@@ -70,11 +70,13 @@ Widget buildView(NavHeaderState state, Dispatch dispatch, ViewService viewServic
             margin: EdgeInsets.only(left: 15.0),
             child: GestureDetector(
               onTap: () {
-                Fluttertoast.showToast(msg: "更多",backgroundColor: Color(0x77000000),gravity: ToastGravity.CENTER);
+                Navigator.of(viewService.context).pushNamed('message_page');
+                // Fluttertoast.showToast(msg: "更多",backgroundColor: Color(0x77000000),gravity: ToastGravity.CENTER);
               },
               child: Image(
                 image: AssetImage('lib/assets/images/icon_home_more.png'),
                 width: 20,
+                height: 20,
                 fit: BoxFit.contain,
               ),
             ),

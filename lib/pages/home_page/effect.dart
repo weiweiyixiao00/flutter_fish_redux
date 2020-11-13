@@ -11,17 +11,18 @@ import 'state.dart';
 Effect<HomeState> buildEffect() {
   return combineEffects(<Object, Effect<HomeState>>{
     HomeAction.changeTheme: _onChangeTheme,
-    Lifecycle.initState: _init,
+    // Lifecycle.initState: _init,
     HomeAction.refresh: _init,
   });
 }
 
 void _onChangeTheme(Action action, Context<HomeState> ctx) {
   GlobalStore.store.dispatch(GlobalActionCreator.onChangeThemeColor());
-  // ctx.state.refreshController.refreshCompleted();
 }
 
 void _init(Action action, Context<HomeState> ctx) async {
+
+  ctx.dispatch(HomeActionCreator.onChangeTheme());
   const bannerParam = {
     "itemsId": 100,
     "provinceId": 16,

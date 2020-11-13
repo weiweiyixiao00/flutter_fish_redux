@@ -1,5 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:shopFish/pages/home_page/page.dart';
+import 'package:shopFish/pages/message_page/page.dart';
 import 'package:shopFish/pages/splash_page/page.dart';
 import 'package:shopFish/store/state.dart';
 import 'package:shopFish/store/store.dart';
@@ -9,6 +10,7 @@ class Routes {
     pages: <String, Page<Object, dynamic>>{
       'splash_page': SplashPage(),
       'main_page': HomePage(),
+      'message_page': MessagePage(),
     },
     visitor: (String path, Page<Object, dynamic> page) {
       /// 满足条件 Page<T> ，T 是 GlobalBaseState 的子类。

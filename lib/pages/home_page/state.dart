@@ -11,7 +11,7 @@ class HomeState implements Cloneable<HomeState>, GlobalBaseState {
   List<String> searchKey; // 热门搜索词
   List<BannerData> bannerList; // banner
   List<CategoryData> categoryList; // 首页分类
-  RefreshController refreshController;
+  RefreshController refreshController;// 下拉刷新控制
 
   @override
   Color themeColor;
@@ -28,10 +28,11 @@ class HomeState implements Cloneable<HomeState>, GlobalBaseState {
 
 }
 
+// 状态定义时赋初始值与initState时赋初始值 都可以，性能未知
 HomeState initState(Map<String, dynamic> args) {
   return HomeState()
     ..searchKey = []
     ..bannerList = []
     ..categoryList = []
-    ..refreshController = RefreshController(initialRefresh: false);
+    ..refreshController = RefreshController(initialRefresh: true);
 }

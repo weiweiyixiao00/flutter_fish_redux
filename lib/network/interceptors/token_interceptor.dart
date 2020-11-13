@@ -15,16 +15,16 @@ class TokenInterceptors extends InterceptorsWrapper {
 
   @override
   onRequest(RequestOptions options) async {
-
     _token = await LocalStorage.get(Config.TOKEN_KEY);
-    
+    print('token==${_token}');
     if (_token == null) {
       var authorizationCode = await getAuthorization();
       if (authorizationCode != null) {
         _token = authorizationCode;
       }
     }
-    options.headers["TokenAuthorization"] = _token;
+    // options.headers["TokenAuthorization"] = _token;
+    options.headers["TokenAuthorization"] = 'Bearer1000002132571690-1604995823585550#7B7/lXjiJEUIjReMgztI3L7ecGdXuZqbCr3dUtjez/InbQbr350t56iuNRoiiwis';
     return options;
   }
 
@@ -62,7 +62,7 @@ class TokenInterceptors extends InterceptorsWrapper {
       Options options = new Options();
       options.headers = headers;
 
-      var res = await dio.get(Config.HOST + Url.GET_TOKEN, options: options);
+      var res = await dio.post(Config.HOST + Url.GET_TOKEN, options: options);
 
       if (res.data['success']) {
         token = 'Bearer' + res.data['data'];
