@@ -1,6 +1,7 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'action.dart';
 import 'state.dart';
@@ -75,8 +76,8 @@ Widget buildView(NavHeaderState state, Dispatch dispatch, ViewService viewServic
               },
               child: Image(
                 image: AssetImage('lib/assets/images/icon_home_more.png'),
-                width: 20,
-                height: 20,
+                width: 20.w,
+                height: 20.w,
                 fit: BoxFit.contain,
               ),
             ),

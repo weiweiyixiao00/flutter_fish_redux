@@ -7,10 +7,9 @@ import 'action.dart';
 import 'state.dart';
 
 Widget buildView(BannerState state, Dispatch dispatch, ViewService viewService) {
-  ScreenUtil.init(viewService.context, designSize: Size(750/2, 1334/2), allowFontScaling: false);
   return Container(
     height: 140.h,
-    margin: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+    margin: EdgeInsets.symmetric(vertical: 8.w, horizontal: 12.w),
     child:  ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: Swiper(
@@ -25,6 +24,6 @@ Widget buildView(BannerState state, Dispatch dispatch, ViewService viewService) 
         control: null,
       ),
     ),
-    
+
   );
 }
